@@ -1,0 +1,31 @@
+{
+  "name": "fcc-boilerplate-npm",
+  "version": "1.0.0",
+  "description": "A boilerplate for the freeCodeCamp curriculum.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VAggrippino/fcc-boilerplate-npm.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VAggrippino/fcc-boilerplate-npm/issues"
+  },
+  "homepage": "https://github.com/VAggrippino/fcc-boilerplate-npm#readme",
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.0.1"
+  },
+  "dependencies": {
+    "path": "^0.12.7"
+  }
+}
