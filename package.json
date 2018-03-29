@@ -28,6 +28,7 @@
     "nodemon": "^1.17.2"
   },
   "dependencies": {
+    "express": "^4.16.3",
     "path": "^0.12.7",
     "pug": "^2.0.3"
   }
