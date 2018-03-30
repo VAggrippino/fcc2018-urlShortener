@@ -54,6 +54,9 @@ async function newUrl (req, res) {
   let re = /^https?:\/\/(?:[^.]+\.)+[^.]+/
 
   console.log(`New URL: ${url}`)
+  if (req.method === 'GET') {
+    url = req.url.match(/^\/new\/(.*)$/)[1]
+  }
 
   let urlGood = url.match(re)
   let urlValid = validUrl.isWebUri(url)
