@@ -51,13 +51,17 @@ app.get('/', (req, res) => {
 
 async function newUrl (req, res) {
   let url = req.body.url || req.params.url
-  let re = /^https?:\/\/(?:[^.]+\.)+[^.]+$/
+  let re = /^https?:\/\/(?:[^.]+\.)+[^.]+/
 
   console.log(`New URL: ${url}`)
 
-  if (!url.match(re) || !validUrl.isWebUri(url)) {
+  let urlGood = url.match(re)
+  let urlValid = validUrl.isWebUri(url)
+  if (!urlGood || !urlValid) {
     res.status(200)
     res.set('Content-Type', 'application/json')
+    if (!urlGood) console.log("URL didn't match regex")
+    if (!urlValid) console.log("URL didn't pass validUrl check.")
     res.send(JSON.stringify({
       error: 'Wrong url format, make sure you have a valid protocol and real site.'
     }))
