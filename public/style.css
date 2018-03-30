@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700');
+
+:root {
+  --googleGreen: #008744;
+  --googleBlue: #0057e7;
+  --googleRed: #d62d20;
+  --googleYellow: #ffa700;
+  --baseline: 1.5rem;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+code {
+  background: #f9f2f4;
+}
+
+.container {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+}
+
+#title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 5rem;
+}
+
+#title :nth-child(1) { color: var(--googleBlue); }
+#title :nth-child(2) { color: var(--googleRed); }
+#title :nth-child(3) { color: var(--googleYellow); }
+#title :nth-child(4) { color: var(--googleBlue); }
+#title :nth-child(5) { color: var(--googleGreen); }
+#title :nth-child(6) { color: var(--googleRed); }
+
+.tab-pane h2,
+.tab-pane h3,
+.tab-pane h4 {
+  margin: 0;
+}
+
+.tab-pane h2 {
+  font-size: 1.5rem;
+  padding-bottom: var(--baseline);
+}
+
+.tab-pane h3 {
+  font-size: 1.2rem;
+}
+
+.tab-pane h4 {
+  font-size: 1rem;
+}
+
+.tab-pane {
+  height: 50vh;
+  overflow: auto;
+  border: 1px solid #dee2e6;
+  border-top: none;
+}

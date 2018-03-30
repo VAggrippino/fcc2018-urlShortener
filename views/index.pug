@@ -8,12 +8,99 @@ head
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous"
   )
+  meta(charset="utf-8")
+  meta(
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  )
+  link(rel='stylesheet' href='/style.css')
+
 
 body
-  h1 URL Shortener Microservice - fcc2018
-  form(action='new' method='post')
-    input(type='text' name='url')
-    button(type='submit') Shorten
+  .container
+    h1#title.text-center
+     span S
+     span h
+     span r
+     span t
+     span n
+     span r
+
+    form.align-self-center(action='new' method='post')
+      .form-row
+        .form-group.col-11
+          input.form-control(type='text' name='url')
+        .form-group.col-1
+          button.btn.btn-primary(type='submit') Shorten
+
+    ul#infoTabs.nav.nav-tabs(role='tablist')
+      li.nav-item
+        a#usage-tab.nav-link.active(
+          href="#usage"
+          data-toggle='tab'
+          role='tab'
+          aria-controls='usage'
+          aria-selected='true'
+        ) Usage
+      li.nav-item
+        a#about-tab.nav-link(
+          href='#about'
+          data-toggle='tab'
+          role='tab'
+          aria-controls='about'
+          aria-selected='false'
+        ) About
+
+    .tab-content
+      #usage.tab-pane.fade.show.active(role='tabpanel')
+        h2 Usage Information
+
+        h3 Example creation usage:
+        p
+          code https://little-url.herokuapp.com/new/https://www.google.com
+          br
+          code https://little-url.herokuapp.com/new/http://foo.com:80
+
+        h3 Example creation output
+        p 
+          code { "original_url":"http://foo.com:80", "short_url":"https://little-url.herokuapp.com/8170" }
+
+        h3 Usage:
+        p
+          code https://little-url.herokuapp.com/2871
+          |  Will redirect to: 
+          code https://www.google.com/
+
+      #about.tab-pane.fade(role='tabpanel')
+        .description
+          h2 URL Shortener Microservice &mdash; freeCodeCamp
+          h3 Objective
+          p.
+            Build a full stack JavaScript app that is functionally similar to
+            this: 
+            a(href='https://little-url.herokuapp.com/') https://little-url.herokuapp.com/
+            and deploy it to Glitch.
+          h3 User Story
+          p.
+            I can pass a URL as a parameter and I will receive a shortened URL in
+            the JSON response.
+
+          h3 User Story
+          p.
+            If I pass an invalid URL that doesn't follow the valid
+            http://www.example.com format, the JSON response will contain an
+            error instead.
+
+          h3 User Story
+          p.
+            When I visit that shortened URL, it will redirect me to my original
+            link.
+
+          h3 Additional Feature
+          p.
+            User can submit a URL using the form instead of using the
+            #[code /new] request.
+
   script(
     src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -29,3 +116,4 @@ body
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"
   )
+  script(src='script.js')
