@@ -1,3 +1,6 @@
+# MongoDB test database path
+data/
+
 # Created by https://www.gitignore.io/api/vim,node,visualstudiocode
 
 ### Node ###
