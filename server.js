@@ -34,7 +34,7 @@ if (!process.env.DISABLE_XORIGIN) {
 createCollection(collectionName)
 
 // For CSS / Client-side JavaScript
-app.use('/public', express.static(path.join(process.cwd(), '/public')))
+app.use(express.static('public'))
 
 // Used by FCC for some automated checking tool
 app.get('/_api/package.json', (req, res) => {
