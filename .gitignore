@@ -1,6 +1,9 @@
 # MongoDB test database path
 data/
 
+# DotENV file
+.env
+
 # Created by https://www.gitignore.io/api/vim,node,visualstudiocode
 
 ### Node ###

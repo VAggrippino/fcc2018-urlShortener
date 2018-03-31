@@ -1,5 +1,7 @@
 'use strict'
 
+require('dotenv').config()
+
 const fs = require('fs')
 const express = require('express')
 const path = require('path')
@@ -10,9 +12,14 @@ const MongoClient = require('mongodb').MongoClient
 
 const app = express()
 const port = process.env.PORT || 3000
-const database = 'fcc2018-urlShortener2'
-const collectionName = 'urls'
-const mongoUrl = `mongodb://localhost:27017/${database}`
+
+const dbport = process.env.DB_PORT
+const dbhost = process.env.DB_HOST
+const database = process.env.DB_NAME
+const username = process.env.DB_USER
+const password = process.env.DB_PASS
+const collectionName = 'fcc2018-urlShortener-urls'
+const mongoUrl = `mongodb://${username}:${password}@${dbhost}:${dbport}/${database}`
 
 app.set('view engine', 'pug')
 app.use(bodyParser.urlencoded({extended: true}))
