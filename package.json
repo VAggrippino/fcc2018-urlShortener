@@ -1,7 +1,7 @@
 {
-  "name": "fcc-boilerplate-npm",
+  "name": "fcc2018-urlShortener",
   "version": "1.0.0",
-  "description": "A boilerplate for the freeCodeCamp curriculum.",
+  "description": "URL Shortener Microservice - freeCodeCamp",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
