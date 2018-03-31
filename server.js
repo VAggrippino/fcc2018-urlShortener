@@ -16,8 +16,8 @@ const port = process.env.PORT || 3000
 const dbport = process.env.DB_PORT
 const dbhost = process.env.DB_HOST
 const database = process.env.DB_NAME
-const username = process.env.DB_USER
-const password = process.env.DB_PASS
+const username = encodeURIComponent(process.env.DB_USER)
+const password = encodeURIComponent(process.env.DB_PASS)
 const collectionName = 'fcc2018-urlShortener-urls'
 const mongoUrl = `mongodb://${username}:${password}@${dbhost}:${dbport}/${database}`
 
@@ -161,6 +161,6 @@ async function createUrl (url) {
 }
 
 async function dbClient () {
-  console.log(`Connecting to database at ${mongoUrl}`)
+  console.log(`Connecting to database ...`)
   return MongoClient.connect(mongoUrl)
 }
