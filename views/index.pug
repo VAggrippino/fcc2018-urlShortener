@@ -57,28 +57,30 @@ body
 
         h3 Example creation usage:
         p
-          code https://little-url.herokuapp.com/new/https://www.google.com
+          code https://#{domain}/new/https://www.google.com
           br
-          code https://little-url.herokuapp.com/new/http://foo.com:80
+          code https://#{domain}/new/http://foo.com:80
 
         h3 Example creation output
         p 
-          code { "original_url":"http://foo.com:80", "short_url":"https://little-url.herokuapp.com/8170" }
+          code { "original_url":"http://foo.com:80", "short_url":"https://#{domain}/8170" }
 
         h3 Usage:
         p
-          code https://little-url.herokuapp.com/2871
+          code https://#{domain}/2871
           |  Will redirect to: 
           code https://www.google.com/
 
       #about.tab-pane.fade.p-2(role='tabpanel')
         .description
-          h2 URL Shortener Microservice &mdash; freeCodeCamp
+          h2
+            a(href="https://www.freecodecamp.org/challenges/url-shortener-microservice")
+              | URL Shortener Microservice | freeCodeCamp
           h3 Objective
           p.
             Build a full stack JavaScript app that is functionally similar to
             this: 
-            a(href='https://little-url.herokuapp.com/') https://little-url.herokuapp.com/
+            #[a(href='https://little-url.herokuapp.com/') https://little-url.herokuapp.com/]
             and deploy it to Glitch.
           h3 User Story
           p.

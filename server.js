@@ -53,7 +53,7 @@ app.get('/_api/package.json', (req, res) => {
 })
 
 app.get('/', (req, res) => {
-  res.render('index')
+  res.render('index', {domain: req.headers.host})
 })
 
 async function newUrl (req, res) {
