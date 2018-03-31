@@ -115,6 +115,7 @@ async function createCollection (collectionName) {
   let client = await dbClient()
   let db = client.db(database)
   let collection = await db.createCollection(collectionName)
+  collection.createIndex({url: 1}, {unique: true})
   client.close()
   return collection
 }
