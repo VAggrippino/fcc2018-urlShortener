@@ -1,124 +1,124 @@
 doctype html
 html(lang='en')
-head
-  title URL Shortener Microservice - fcc2018
-  link(
-    rel="stylesheet"
-    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-    crossorigin="anonymous"
-  )
-  meta(charset="utf-8")
-  meta(
-    name="viewport"
-    content="width=device-width, initial-scale=1, shrink-to-fit=no"
-  )
-  link(rel='stylesheet' href='/style.css')
+  head
+    title URL Shortener Microservice - fcc2018
+    link(
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    )
+    meta(charset="utf-8")
+    meta(
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    )
+    link(rel='stylesheet' href='/style.css')
 
 
-body
-  .container
-    h1#title.text-center
-     span S
-     span h
-     span r
-     span t
-     span n
-     span r
+  body
+    .container
+      h1#title.text-center
+      span S
+      span h
+      span r
+      span t
+      span n
+      span r
 
-    form.align-self-center(action='new' method='post')
-      .form-row
-        .form-group.col-11
-          input.form-control(type='text' name='url')
-        .form-group.col-1
-          button.btn.btn-primary(type='submit') Shorten
+      form.align-self-center(action='new' method='post')
+        .form-row
+          .form-group.col-11
+            input.form-control(type='text' name='url')
+          .form-group.col-1
+            button.btn.btn-primary(type='submit') Shorten
 
-    ul#infoTabs.nav.nav-tabs(role='tablist')
-      li.nav-item
-        a#usage-tab.nav-link.active(
-          href="#usage"
-          data-toggle='tab'
-          role='tab'
-          aria-controls='usage'
-          aria-selected='true'
-        ) Usage
-      li.nav-item
-        a#about-tab.nav-link(
-          href='#about'
-          data-toggle='tab'
-          role='tab'
-          aria-controls='about'
-          aria-selected='false'
-        ) About
+      ul#infoTabs.nav.nav-tabs(role='tablist')
+        li.nav-item
+          a#usage-tab.nav-link.active(
+            href="#usage"
+            data-toggle='tab'
+            role='tab'
+            aria-controls='usage'
+            aria-selected='true'
+          ) Usage
+        li.nav-item
+          a#about-tab.nav-link(
+            href='#about'
+            data-toggle='tab'
+            role='tab'
+            aria-controls='about'
+            aria-selected='false'
+          ) About
 
-    .tab-content
-      #usage.tab-pane.fade.p-2.show.active(role='tabpanel')
-        h2 Usage Information
+      .tab-content
+        #usage.tab-pane.fade.p-2.show.active(role='tabpanel')
+          h2 Usage Information
 
-        h3 Example creation usage:
-        p.
-          Enter a URL to shorten into the form or use the following URL format.
-
-        p
-          code https://#{domain}/new/https://www.google.com
-          br
-          code https://#{domain}/new/http://foo.com:80
-
-        h3 Example creation output
-        p 
-          code { "original_url":"http://foo.com:80", "short_url":"https://#{domain}/8170" }
-
-        h3 Usage:
-        p
-          code https://#{domain}/2871
-          |  Will redirect to: 
-          code https://www.google.com/
-
-      #about.tab-pane.fade.p-2(role='tabpanel')
-        .description
-          h2
-            a(href="https://www.freecodecamp.org/challenges/url-shortener-microservice")
-              | URL Shortener Microservice | freeCodeCamp
-          h3 Objective
+          h3 Example creation usage:
           p.
-            Build a full stack JavaScript app that is functionally similar to
-            this: 
-            #[a(href='https://little-url.herokuapp.com/') https://little-url.herokuapp.com/]
-            and deploy it to Glitch.
-          h3 User Story
-          p.
-            I can pass a URL as a parameter and I will receive a shortened URL in
-            the JSON response.
+            Enter a URL to shorten into the form or use the following URL format.
 
-          h3 User Story
-          p.
-            If I pass an invalid URL that doesn't follow the valid
-            http://www.example.com format, the JSON response will contain an
-            error instead.
+          p
+            code https://#{domain}/new/https://www.google.com
+            br
+            code https://#{domain}/new/http://foo.com:80
 
-          h3 User Story
-          p.
-            When I visit that shortened URL, it will redirect me to my original
-            link.
+          h3 Example creation output
+          p 
+            code { "original_url":"http://foo.com:80", "short_url":"https://#{domain}/8170" }
 
-          h3 Additional Feature
-          p.
-            User can submit a URL using the form instead of using the
-            #[code /new] request.
+          h3 Usage:
+          p
+            code https://#{domain}/2871
+            |  Will redirect to: 
+            code https://www.google.com/
 
-  script(
-    src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"
-  )
-  script(
-    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"
-  )
-  script(
-    src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"
-  )
-  script(src='script.js')
+        #about.tab-pane.fade.p-2(role='tabpanel')
+          .description
+            h2
+              a(href="https://www.freecodecamp.org/challenges/url-shortener-microservice")
+                | URL Shortener Microservice | freeCodeCamp
+            h3 Objective
+            p.
+              Build a full stack JavaScript app that is functionally similar to
+              this: 
+              #[a(href='https://little-url.herokuapp.com/') https://little-url.herokuapp.com/]
+              and deploy it to Glitch.
+            h3 User Story
+            p.
+              I can pass a URL as a parameter and I will receive a shortened URL in
+              the JSON response.
+
+            h3 User Story
+            p.
+              If I pass an invalid URL that doesn't follow the valid
+              http://www.example.com format, the JSON response will contain an
+              error instead.
+
+            h3 User Story
+            p.
+              When I visit that shortened URL, it will redirect me to my original
+              link.
+
+            h3 Additional Feature
+            p.
+              User can submit a URL using the form instead of using the
+              #[code /new] request.
+
+    script(
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    )
+    script(
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    )
+    script(
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    )
+    script(src='script.js')
